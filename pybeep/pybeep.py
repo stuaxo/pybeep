@@ -1,4 +1,5 @@
 import subprocess
+import sys
 from .sounds import beep_bytes, vibrate_bytes
 
 class BeepInterface:
@@ -17,7 +18,7 @@ class BeepInterface:
             p.communicate(input=self.sound)
         except FileNotFoundError:
             print("You need to install sox first.")
-            exit(0)
+            sys.exit(0)
 
     def beepn(self, n):
         """
